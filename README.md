@@ -1,5 +1,5 @@
 # Algorithmen
-Quicksort
-Bubblesort
-Heapsort
-Shaker
+## Quicksort
+## Bubblesort
+## Heapsort
+## Shaker
