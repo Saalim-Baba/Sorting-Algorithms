@@ -6,7 +6,8 @@ def load_data():
             subarray.append(entry.split(","))
         return subarray
 
+def quicksort(subarray):
+
 
 
 print(load_data())
-
