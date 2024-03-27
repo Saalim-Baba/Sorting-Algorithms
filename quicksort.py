@@ -1,30 +1,44 @@
-from datetime import *
-from time import strptime
+import sys
+
 
 
 def load_data():
     subarray = []
-    with open("SortSmall.txt", "r") as file:
+    with open("SortMedium.txt", "r") as file:
         big_array = file.read().split("\n")
         for entry in big_array:
             entry = entry.split(",")
             subarray.append(entry)
             for i in subarray:
-                i[0] = int(i[0])
-                i[4] = int(i[4])
-                i[6] = float(i[6])
-                i[5] = strptime.i[5]
+                try:
+                    i[0] = int(i[0])
+                    i[4] = int(i[4])
+                    i[6] = float(i[6])
+                except ValueError:
+                    continue
         return subarray
 
 
-def quickSort(list):
-    if not list:
-        return list
-    pivot = list[0]
-    i = 4
-    lesser = quickSort([check for check in list[1:] if check[i] < pivot[i]])
-    greater = quickSort([check for check in list[1:] if check[i] >= pivot[i]])
-    return lesser + [pivot] + greater
+def sort(array):
+    """Sort the array by using quicksort."""
+
+    less = []
+    equal = []
+    greater = []
+
+    if len(array) > 1:
+        pivot = array[0]
+        i = 6
+        for x in array:
+            if x[i] < pivot[i]:
+                less.append(x)
+            elif x[i] == pivot[i]:
+                equal.append(x)
+            elif x[i] > pivot[i]:
+                greater.append(x)
+        return sort(less)+equal+sort(greater)
+    else:
+        return array
 
 
-print(quickSort(load_data()))
+print(sort(load_data()))
