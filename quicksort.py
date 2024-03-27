@@ -1,6 +1,3 @@
-import sys
-
-
 
 def load_data():
     subarray = []
