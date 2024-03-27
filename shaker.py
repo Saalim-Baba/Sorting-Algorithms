@@ -5,3 +5,4 @@ def load_data():
         for entry in big_array:
             subarray.append(entry.split(","))
         return subarray
+
