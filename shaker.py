@@ -1,3 +1,6 @@
+import datetime
+
+
 def load_data():
     subarray = []
     with open("SortBig.txt", "r") as file:
@@ -9,6 +12,7 @@ def load_data():
                 try:
                     i[0] = int(i[0])
                     i[4] = int(i[4])
+
 
                     i[6] = float(i[6])
 
@@ -31,3 +35,4 @@ def shakersort_int(data: list, pos_count: int):
     return data
 
 print(shakersort_int(load_data(), 4))
+
