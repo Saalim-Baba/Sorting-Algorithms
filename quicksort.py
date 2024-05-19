@@ -3,24 +3,27 @@ import datetime
 import time
 
 
-def load_data():
+def load_data(file_path="SortSmall.txt"):
     subarray = []
-    with open("SortSmall.txt", "r") as file:
-        big_array = file.read().split("\n")
-        for entry in big_array:
-            entry = entry.split(",")
-            subarray.append(entry)
-            for i in subarray:
+    try:
+        with open(file_path, "r") as file:
+            big_array = file.read().strip().split("\n")
+            for entry in big_array:
+                entry = entry.split(",")
+                if len(entry) < 7:
+                    continue
                 try:
-                    i[0] = int(i[0])
-                    i[4] = int(i[4])
-                    if isinstance(i[5], str):
-                        i[5] = datetime.datetime(int(i[5].split(".")[2]), int(i[5].split(".")[1]),
-                                                 int(i[5].split(".")[0]))
-                    i[6] = float(i[6])
+                    entry[0] = int(entry[0])
+                    entry[4] = int(entry[4])
+                    entry[5] = datetime.datetime.strptime(entry[5], "%d.%m.%Y")
+                    entry[6] = float(entry[6])
                 except ValueError:
                     continue
+                subarray.append(entry)
         return subarray
+    except FileNotFoundError:
+        print(f"File {file_path} not found.")
+        return []
 
 
 def sort(array, sort_option: int):
