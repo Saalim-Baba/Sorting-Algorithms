@@ -1,4 +1,5 @@
 from datetime import datetime
+import time
 
 
 def load_data():
@@ -20,8 +21,9 @@ def load_data():
     return subarray
 
 
+def bubblesort(data: list, pos_count: int):
+    """Sort the array by using bubblesort."""
 
-def bubblesort_int(data: list, pos_count: int):
     datalength = len(data) - 1
     for iteration in range(datalength):
         for element in range(datalength - iteration):
@@ -34,4 +36,11 @@ def bubblesort_int(data: list, pos_count: int):
     return data
 
 
-print(bubblesort_int(load_data(), 0))
+start_time = time.time()
+sorted_data = bubblesort(load_data(), 0)
+end_time = time.time()
+
+for entry in sorted_data:
+    print(entry)
+
+print(f"Time taken: {end_time - start_time} seconds")
