@@ -26,16 +26,8 @@ def load_data(file_path="SortSmall.txt"):
 
 
 def Heapsort(array: list, sort_option: int):
-    option_index_map = {
-        1: 0,
-        2: 1,
-        3: 2,
-        4: 3,
-        5: 4,
-        6: 5,
-        7: 6
-    }
-    option = option_index_map.get(sort_option, 0)  # Default to sorting by ID if invalid option
+
+    option = sort_option
 
     def swap(x: int, y: int):
         array[x], array[y] = array[y], array[x]
