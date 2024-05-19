@@ -21,14 +21,14 @@ def load_data():
     return subarray
 
 
-def bubblesort(data: list, pos_count: int):
+def bubblesort(data: list, sort_option: int):
     """Sort the array by using bubblesort."""
 
     datalength = len(data) - 1
     for iteration in range(datalength):
         for element in range(datalength - iteration):
 
-            if data[element][pos_count] > data[element + 1][pos_count]:
+            if data[element][sort_option] > data[element + 1][sort_option]:
                 data[element], data[element + 1] = data[element + 1], data[element]
             else:
                 continue
