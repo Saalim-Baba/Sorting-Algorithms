@@ -1,7 +1,7 @@
 
-# 🌀 Sorting Algorithms Playground
+# 🌀 Sorting Algorithms
 
-Welcome to the **Sorting Algorithms Playground**! This repository covers fundamental sorting algorithms implemented in Python. Dive into the code and explore how these algorithms work.
+Welcome to the **Sorting Algorithms**! This repository covers fundamental sorting algorithms implemented in Python. Dive into the code and explore how these algorithms work.
 
 ## 📚 Contents
 
@@ -22,13 +22,9 @@ Shaker Sort, also known as Cocktail Shaker Sort, is a variation of Bubblesort. I
 Clone the repository and explore the different sorting algorithms:
 
 ```bash
-git clone https://github.com/yourusername/sorting-algorithms-playground.git
+git clone https://github.com/Saalim-Baba/sorting-algorithms-playground.git
 cd sorting-algorithms-playground
 ```
-
-## 🛠️ Usage
-
-Each sorting algorithm is implemented in its own Python file. Run any file to see the algorithm in action:
 
 ```bash
 python quicksort.py
@@ -49,5 +45,3 @@ python shakersort.py
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ---
-
-Enjoy sorting!
